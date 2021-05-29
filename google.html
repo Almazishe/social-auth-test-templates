@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-scope" content="profile email"/>
+    <meta name="google-signin-client_id" content="323882406842-899gq7n25svqq3pohsbdb60l1e2ldgjf.apps.googleusercontent.com"/>
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+    <title>Google</title>
+</head>
+<body>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log("ID: " + profile.getId());
+
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID token: " + id_token);
+        }
+    </script>
+    
+</body>
+</html>
